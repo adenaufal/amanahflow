@@ -44,7 +44,7 @@ export async function createInvoice(data: {
   email: string;
   mobile: string;
   description: string;
-  items: { quantity: number; price: number; description: string }[];
+  items: { quantity: number; rate: number; description: string }[];
   redirectUrl: string;
 }) {
   return mayarFetch('/invoice/create', {

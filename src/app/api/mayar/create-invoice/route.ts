@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       items: [
         {
           quantity: 1,
-          price: amount,
+          rate: amount,
           description: `${donationType} untuk ${campaignTitle}`,
         },
       ],
