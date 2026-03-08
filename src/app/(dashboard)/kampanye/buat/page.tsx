@@ -48,7 +48,7 @@ export default function BuatKampanyePage() {
     }
 
     // Pastikan profile ada sebelum insert kampanye (guard FK violation)
-    await supabase.from('profiles' as any).upsert(
+    await (supabase.from('profiles') as any).upsert(
       {
         id: user.id,
         full_name:
