@@ -13,15 +13,18 @@ export async function POST(req: NextRequest) {
     const { event, data } = payload;
 
     if (event === 'payment.received') {
-      // Update donation status → DB trigger on_donation_paid otomatis update campaign stats
+      // Match by payment link id (stored at creation) OR transactionId (stored after first webhook)
+      // Using .in() handles both cases and prevents double-processing
+      const matchIds = [data.id, data.transactionId].filter(Boolean);
       const { error } = await (supabase
         .from('donations') as any)
         .update({
           payment_status: 'paid',
           paid_at: data.paidAt || new Date().toISOString(),
-          mayar_transaction_id: data.transactionId,
+          mayar_transaction_id: data.transactionId || data.id,
         })
-        .eq('mayar_transaction_id', data.transactionId);
+        .in('mayar_transaction_id', matchIds)
+        .neq('payment_status', 'paid'); // idempotency: skip if already paid
 
       if (error) {
         console.error('Webhook DB error:', error);
