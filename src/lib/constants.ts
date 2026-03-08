@@ -1,4 +1,4 @@
-export const APP_NAME = 'ZakatFlow';
+export const APP_NAME = 'AmanahFlow';
 export const APP_DESCRIPTION =
   'Platform paling mudah untuk masjid dan komunitas meluncurkan kampanye fundraising Ramadhan yang transparan.';
 

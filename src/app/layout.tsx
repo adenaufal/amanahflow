@@ -18,8 +18,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ZakatFlow — Mudahkan Pengelolaan Zakat & Donasi',
-    template: '%s | ZakatFlow',
+    default: 'AmanahFlow — Mudahkan Pengelolaan Zakat & Donasi',
+    template: '%s | AmanahFlow',
   },
   description:
     'Platform paling mudah untuk masjid dan komunitas meluncurkan kampanye fundraising Ramadhan yang transparan dengan kalkulator zakat dan Mayar payment tracking.',
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     'infaq',
     'sedekah',
   ],
-  authors: [{ name: 'ZakatFlow' }],
+  authors: [{ name: 'AmanahFlow' }],
   openGraph: {
     type: 'website',
     locale: 'id_ID',
-    siteName: 'ZakatFlow',
-    title: 'ZakatFlow — Mudahkan Pengelolaan Zakat & Donasi',
+    siteName: 'AmanahFlow',
+    title: 'AmanahFlow — Mudahkan Pengelolaan Zakat & Donasi',
     description:
       'Platform paling mudah untuk masjid dan komunitas meluncurkan kampanye fundraising Ramadhan yang transparan.',
   },

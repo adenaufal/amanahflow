@@ -226,7 +226,7 @@ export default async function TransparansiPage({
             </Link>
           </Button>
           <p className="text-xs text-muted-foreground">
-            Data diperbarui secara real-time &middot; Powered by ZakatFlow
+            Data diperbarui secara real-time &middot; Powered by AmanahFlow
           </p>
         </div>
 

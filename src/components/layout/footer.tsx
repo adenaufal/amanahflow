@@ -12,7 +12,7 @@ export function Footer() {
               <div className="w-8 h-8 rounded-lg gradient-emerald flex items-center justify-center">
                 <Moon className="w-4 h-4 text-white" />
               </div>
-              <span className="text-lg font-bold font-heading text-gradient-emerald">ZakatFlow</span>
+              <span className="text-lg font-bold font-heading text-gradient-emerald">AmanahFlow</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Platform pengelolaan zakat dan donasi masjid yang transparan.
@@ -48,7 +48,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} ZakatFlow. Dibuat untuk Mayar Vibecoding Competition Ramadhan 2026.</p>
+          <p>&copy; {new Date().getFullYear()} AmanahFlow. Dibuat untuk Mayar Vibecoding Competition Ramadhan 2026.</p>
         </div>
       </div>
     </footer>

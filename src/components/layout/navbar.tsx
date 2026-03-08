@@ -16,7 +16,7 @@ export function Navbar() {
           <div className="w-8 h-8 rounded-lg gradient-emerald flex items-center justify-center">
             <Moon className="w-4 h-4 text-white" />
           </div>
-          <span className="text-lg font-bold font-heading text-gradient-emerald">ZakatFlow</span>
+          <span className="text-lg font-bold font-heading text-gradient-emerald">AmanahFlow</span>
         </Link>
 
         <nav className="hidden sm:flex items-center gap-6">
