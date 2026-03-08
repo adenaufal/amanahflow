@@ -58,9 +58,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.2, ease }}
           >
-            AmanahFlow beri masjid Anda halaman kampanye zakat profesional, kalkulator zakat bawaan,
-            dan transparansi publik yang bisa dicek jamaah kapan saja — siap dibagikan ke WhatsApp
-            dalam 5 menit. Gratis.
+            Kampanye zakat profesional lengkap dengan kalkulator dan transparansi publik — siap dibagikan ke WhatsApp dalam 5 menit. Gratis.
           </motion.p>
 
           {/* CTA Buttons */}

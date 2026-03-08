@@ -17,31 +17,31 @@ const features = [
     icon: Megaphone,
     title: 'Tanpa Tim IT. Kampanye Siap dalam 5 Menit.',
     description:
-      'Pilih jenis donasi, tentukan target, dan kampanye masjid Anda langsung jadi. Tidak perlu developer, tidak perlu setup rumit.',
+      'Pilih jenis donasi, tentukan target, kampanye langsung jadi. Tidak perlu developer, tidak perlu setup rumit.',
   },
   {
     icon: Calculator,
     title: 'Donatur Tidak Perlu Tanya "Berapa Zakat Saya?"',
     description:
-      'Kalkulator zakat fitrah, mal, dan profesi terintegrasi langsung di halaman donasi. Donatur hitung, langsung bayar — di satu tempat.',
+      'Kalkulator zakat fitrah, mal, dan profesi terintegrasi. Donatur hitung dan bayar di satu halaman.',
   },
   {
     icon: BarChart3,
     title: 'Jamaah Tidak Akan Tanya Progress Lagi',
     description:
-      'Dashboard real-time yang bisa dilihat siapa saja. Setiap donasi masuk langsung terlihat — tanpa Anda perlu update manual apapun.',
+      'Dashboard real-time yang bisa dilihat siapa saja. Setiap donasi masuk otomatis — tanpa update manual.',
   },
   {
     icon: Users,
     title: 'Rekap Donatur Otomatis — Tanpa Spreadsheet',
     description:
-      'Semua data muzakki tersimpan rapi otomatis. Riwayat donasi, total kontribusi, dan bukti zakat digital — semuanya ada.',
+      'Semua data muzakki tersimpan otomatis — riwayat donasi, total kontribusi, dan bukti zakat digital.',
   },
   {
     icon: Shield,
     title: 'Jamaah Bisa Buktikan Sendiri — Tanpa Anda Jelaskan',
     description:
-      'Setiap kampanye punya halaman transparansi publik. Siapa saja bisa cek progres dan daftar donatur — kepercayaan dibangun otomatis.',
+      'Setiap kampanye punya halaman transparansi publik. Siapa saja bisa cek progres dan daftar donatur.',
   },
   {
     icon: Share2,

@@ -8,7 +8,7 @@ const steps = [
     step: 1,
     icon: UserPlus,
     title: 'Daftar & Buat Akun',
-    description: 'Selesai dalam 30 detik. Tidak perlu kartu kredit, tidak perlu approval panjang. Langsung masuk.',
+    description: 'Selesai dalam 30 detik. Tidak perlu kartu kredit atau approval.',
   },
   {
     step: 2,
@@ -86,11 +86,11 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="mt-12 text-center text-sm text-muted-foreground"
         >
-          Belum yakin? Mulai dari{' '}
+          Belum yakin? Coba{' '}
           <a href="/kalkulator-zakat" className="text-primary font-medium underline underline-offset-2">
             kalkulator zakat dulu
           </a>{' '}
-          — gratis, tanpa perlu daftar. Kalau berguna, kampanye Anda siap dalam 5 menit berikutnya.
+          — gratis, tanpa perlu daftar.
         </motion.p>
       </div>
     </section>

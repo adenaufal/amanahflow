@@ -50,12 +50,8 @@ export function CTA() {
             <h2 className="text-3xl lg:text-4xl font-bold font-heading text-white mb-4">
               Masjid Anda Layak Punya Sistem Donasi yang Amanah.
             </h2>
-            <p className="text-white/80 max-w-xl mx-auto mb-2 text-lg">
-              Bukan spreadsheet. Bukan grup WhatsApp. Platform yang membuktikan kepada jamaah
-              bahwa setiap rupiah dikelola dengan benar.
-            </p>
-            <p className="text-white/60 max-w-md mx-auto mb-8 text-sm">
-              Ramadhan datang sekali setahun. Kampanye zakat yang amanah bisa dimulai hari ini.
+            <p className="text-white/80 max-w-xl mx-auto mb-8 text-lg">
+              Bukan spreadsheet. Bukan grup WhatsApp. Platform yang membuktikan bahwa setiap rupiah dikelola dengan benar.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -66,7 +62,7 @@ export function CTA() {
                   className="bg-white text-primary hover:bg-white/90 h-12 px-8 text-base font-semibold shadow-lg"
                 >
                   <Link href="/register">
-                    Daftar Gratis — Kampanye Pertama Jalan Hari Ini
+                    Daftar Gratis — Mulai Hari Ini
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
