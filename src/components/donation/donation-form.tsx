@@ -51,15 +51,15 @@ export function DonationForm({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          campaign_id: campaignId,
-          donor_name: form.is_anonymous ? 'Hamba Allah' : form.donor_name,
-          donor_email: form.donor_email,
-          donor_phone: form.donor_phone,
+          campaignId,
+          campaignSlug,
+          donorName: form.is_anonymous ? 'Hamba Allah' : form.donor_name,
+          donorEmail: form.donor_email,
+          donorPhone: form.donor_phone,
           amount: Number(form.amount),
-          donation_type: form.donation_type,
-          is_anonymous: form.is_anonymous,
+          donationType: form.donation_type,
+          isAnonymous: form.is_anonymous,
           message: form.message,
-          redirect_url: `${window.location.origin}/campaign/${campaignSlug}?donated=true`,
         }),
       });
 
@@ -69,8 +69,8 @@ export function DonationForm({
         throw new Error(data.error || 'Gagal membuat pembayaran');
       }
 
-      if (data.payment_url) {
-        window.location.href = data.payment_url;
+      if (data.paymentUrl) {
+        window.location.href = data.paymentUrl;
       } else {
         toast.success('Donasi berhasil dibuat!');
       }

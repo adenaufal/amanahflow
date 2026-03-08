@@ -8,18 +8,31 @@ type Donation = Database['public']['Tables']['donations']['Row'];
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { campaignId, donorName, donorEmail, donorPhone, amount, donationType, message, isAnonymous } = body;
+    const { campaignId, campaignSlug, donorName, donorEmail, donorPhone, amount, donationType, message, isAnonymous } = body;
+
+    if (!campaignId || !donorName || !amount) {
+      return NextResponse.json({ error: 'Data tidak lengkap' }, { status: 400 });
+    }
 
     // Create payment link via Mayar
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-    const mayarResponse = await createPaymentLink({
-      name: donorName,
-      email: donorEmail,
-      amount,
-      mobile: donorPhone || '',
-      description: `Donasi ${donationType} - ${donorName}`,
-      redirectUrl: `${appUrl}/campaign/${body.campaignSlug}?success=true`,
-    });
+    let mayarResponse;
+    try {
+      mayarResponse = await createPaymentLink({
+        name: donorName,
+        email: donorEmail || 'donatur@amanahflow.id',
+        amount,
+        mobile: donorPhone || '',
+        description: `Donasi ${donationType} - ${donorName}`,
+        redirectUrl: `${appUrl}/transparansi/${campaignSlug}?donated=true`,
+      });
+    } catch (mayarErr: any) {
+      console.error('Mayar API error detail:', mayarErr);
+      return NextResponse.json(
+        { error: `Mayar: ${mayarErr.message}` },
+        { status: 502 }
+      );
+    }
 
     // Create donation record in Supabase
     const supabase = await createClient();
@@ -35,8 +48,8 @@ export async function POST(req: NextRequest) {
         is_anonymous: isAnonymous,
         message,
         payment_status: 'pending',
-        mayar_transaction_id: mayarResponse.data.transactionId,
-        mayar_payment_url: mayarResponse.data.link,
+        mayar_transaction_id: mayarResponse?.data?.transactionId ?? null,
+        mayar_payment_url: mayarResponse?.data?.link ?? null,
       })
       .select()
       .single()) as { data: Donation | null; error: { message: string } | null };
@@ -44,14 +57,14 @@ export async function POST(req: NextRequest) {
     if (error) throw error;
 
     return NextResponse.json({
-      paymentUrl: mayarResponse.data.link,
+      paymentUrl: mayarResponse?.data?.link,
       donationId: donation?.id,
-      transactionId: mayarResponse.data.transactionId,
+      transactionId: mayarResponse?.data?.transactionId,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Create payment error:', error);
     return NextResponse.json(
-      { error: 'Gagal membuat link pembayaran' },
+      { error: error?.message || 'Gagal membuat link pembayaran' },
       { status: 500 }
     );
   }

@@ -47,6 +47,19 @@ export default function BuatKampanyePage() {
       return;
     }
 
+    // Pastikan profile ada sebelum insert kampanye (guard FK violation)
+    await supabase.from('profiles' as any).upsert(
+      {
+        id: user.id,
+        full_name:
+          user.user_metadata?.full_name ||
+          user.email ||
+          'Admin',
+        organization_name: user.user_metadata?.organization_name || null,
+      },
+      { onConflict: 'id', ignoreDuplicates: true }
+    );
+
     const slug = generateSlug(form.title) + '-' + Date.now().toString(36);
 
     const { data, error } = (await (supabase
