@@ -13,29 +13,19 @@ export async function POST(req: NextRequest) {
     const { event, data } = payload;
 
     if (event === 'payment.received') {
-      // 1. Update donation status
-      const { data: donation, error } = await (supabase
+      // Update donation status → DB trigger on_donation_paid otomatis update campaign stats
+      const { error } = await (supabase
         .from('donations') as any)
         .update({
           payment_status: 'paid',
           paid_at: data.paidAt || new Date().toISOString(),
           mayar_transaction_id: data.transactionId,
         })
-        .eq('mayar_transaction_id', data.transactionId)
-        .select('campaign_id, amount')
-        .single();
+        .eq('mayar_transaction_id', data.transactionId);
 
       if (error) {
         console.error('Webhook DB error:', error);
         throw error;
-      }
-
-      // 2. Update campaign stats (collected_amount + donor_count)
-      if (donation) {
-        await (supabase.rpc as any)('increment_campaign_stats', {
-          p_campaign_id: donation.campaign_id,
-          p_amount: donation.amount,
-        });
       }
     } else if (event === 'payment.failed') {
       await (supabase

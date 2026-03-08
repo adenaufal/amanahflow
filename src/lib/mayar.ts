@@ -1,4 +1,4 @@
-const MAYAR_BASE_URL = process.env.MAYAR_API_BASE_URL || 'https://api.mayar.id/hl/v1';
+const MAYAR_BASE_URL = process.env.MAYAR_API_BASE_URL || 'https://api.mayar.club/hl/v1';
 const MAYAR_API_KEY = process.env.MAYAR_API_KEY || '';
 
 async function mayarFetch(endpoint: string, options: RequestInit = {}) {
