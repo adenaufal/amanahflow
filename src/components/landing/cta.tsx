@@ -76,7 +76,7 @@ export function CTA() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white/10 h-12 px-8 text-base"
+                  className="border-white/50 bg-transparent text-white hover:bg-white/10 hover:border-white/70 h-12 px-8 text-base"
                 >
                   <Link href="/kalkulator-zakat">Coba Kalkulator Zakat</Link>
                 </Button>
@@ -91,8 +91,8 @@ export function CTA() {
               viewport={{ once: true }}
             >
               {riskReversal.map((item) => (
-                <motion.li key={item} variants={listItem} className="flex items-center gap-1.5 text-white/70 text-xs">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-white/60 shrink-0" />
+                <motion.li key={item} variants={listItem} className="flex items-center gap-1.5 text-white/85 text-xs">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-white/70 shrink-0" />
                   {item}
                 </motion.li>
               ))}
