@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sadaqo.vercel.app'),
   title: {
     default: 'Sadaqo — Kampanye Donasi Masjid dalam 5 Menit',
     template: '%s | Sadaqo',
@@ -47,11 +48,13 @@ export const metadata: Metadata = {
     title: 'Sadaqo — Kampanye Donasi Masjid dalam 5 Menit',
     description:
       'Platform donasi masjid untuk pengurus DKM Indonesia. Kampanye siap bagikan ke WhatsApp dalam 5 menit, tanpa developer.',
+    images: [{ url: '/og-image.png', width: 2848, height: 1504, alt: 'Sadaqo — Kampanye Donasi Masjid' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sadaqo — Kampanye Donasi Masjid dalam 5 Menit',
     description: 'Platform donasi masjid untuk pengurus DKM Indonesia. Gratis untuk mulai.',
+    images: ['/og-image.png'],
   },
 };
 
