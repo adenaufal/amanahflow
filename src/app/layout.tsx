@@ -48,13 +48,13 @@ export const metadata: Metadata = {
     title: 'Sadaqo — Kampanye Donasi Masjid dalam 5 Menit',
     description:
       'Platform donasi masjid untuk pengurus DKM Indonesia. Kampanye siap bagikan ke WhatsApp dalam 5 menit, tanpa developer.',
-    images: [{ url: '/og-image.png', width: 2848, height: 1504, alt: 'Sadaqo — Kampanye Donasi Masjid' }],
+    images: [{ url: '/og-image.webp', width: 2848, height: 1504, alt: 'Sadaqo — Kampanye Donasi Masjid' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sadaqo — Kampanye Donasi Masjid dalam 5 Menit',
     description: 'Platform donasi masjid untuk pengurus DKM Indonesia. Gratis untuk mulai.',
-    images: ['/og-image.png'],
+    images: ['/og-image.webp'],
   },
 };
 
