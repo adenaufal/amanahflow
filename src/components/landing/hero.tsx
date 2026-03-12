@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Moon, ArrowRight, Calculator, BarChart3, Shield, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 const ease = [0.25, 1, 0.5, 1] as const;
 
@@ -106,6 +107,23 @@ export function Hero() {
                 <p className="text-xs text-muted-foreground">{stat.desc}</p>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Hero Image */}
+          <motion.div
+            className="mt-16 rounded-2xl overflow-hidden shadow-2xl border border-primary/10"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.55, ease }}
+          >
+            <Image
+              src="/hero-mosque.png"
+              alt="Komunitas masjid menggunakan Sadaqo untuk kampanye donasi"
+              width={1200}
+              height={675}
+              className="w-full object-cover"
+              priority
+            />
           </motion.div>
         </div>
       </div>

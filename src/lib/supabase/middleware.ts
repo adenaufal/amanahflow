@@ -40,6 +40,7 @@ export async function updateSession(request: NextRequest) {
     !request.nextUrl.pathname.startsWith('/donate') &&
     !request.nextUrl.pathname.startsWith('/transparansi') &&
     !request.nextUrl.pathname.startsWith('/kalkulator-zakat') &&
+    !request.nextUrl.pathname.startsWith('/artikel') &&
     !request.nextUrl.pathname.startsWith('/api') &&
     request.nextUrl.pathname !== '/'
   ) {

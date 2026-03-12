@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { XCircle, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 
 const ease = [0.25, 1, 0.5, 1] as const;
 
@@ -124,6 +125,23 @@ export function BeforeAfter() {
             </motion.ul>
           </motion.div>
         </div>
+
+        {/* Community visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2, ease }}
+          className="mt-10 rounded-2xl overflow-hidden border border-border/40 shadow-md"
+        >
+          <Image
+            src="/char-community.png"
+            alt="Komunitas jamaah masjid bersama"
+            width={1200}
+            height={500}
+            className="w-full object-cover max-h-[340px]"
+          />
+        </motion.div>
       </div>
     </section>
   );
