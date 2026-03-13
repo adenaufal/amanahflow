@@ -1,0 +1,113 @@
+# Audio Scripts for ElevenLabs v3 — Sadaqo Demo Video
+# Format natural & ekspresif untuk eleven_v3 model
+
+---
+
+## SEGMENT 1: HOOK (0:00-0:22)
+File output: seg1-hook.mp3
+
+Hari ini, ada pengurus masjid yang masih ngetik manual ke spreadsheet — sambil balas konfirmasi transfer satu per satu di WhatsApp. Di bulan Ramadhan.
+
+[pause]
+
+Hampir semuanya begitu.
+
+---
+
+## SEGMENT 2: INTRO (0:22-0:40)
+File output: seg2-intro.mp3
+
+Sadaqo. Platform donasi yang dibuat khusus untuk DKM Indonesia. Bukan diadaptasi dari crowdfunding umum, bukan aplikasi lembaga zakat besar yang butuh proses berbulan-bulan. Dibuat karena frustrasi itu nyata — dan pengurus masjid layak dapat alat yang lebih baik.
+
+---
+
+## SEGMENT 3: KAMPANYE (0:40-1:15)
+File output: seg3-kampanye.mp3
+
+Dari daftar sampai kampanye siap dibagikan — lima menit. Isi nama, target, deskripsi, klik satu tombol. Halaman kampanye langsung live.
+
+Jamaah bisa lihat progress kapan saja — tanpa login, tanpa tanya ke siapapun. Satu klik, pesan WhatsApp sudah terbentuk — lengkap dengan link dan angka terkini.
+
+---
+
+## SEGMENT 4: DONASI + MAYAR (1:15-1:48)
+File output: seg4-donasi.mp3
+
+Dari sisi jamaah yang mau berdonasi. Klik donasi, langsung ke Mayar — bisa transfer bank, QRIS, semua tersedia.
+
+[pause]
+
+Pembayaran masuk, tercatat otomatis. DKM nggak perlu cek WhatsApp, nggak perlu rekap manual.
+
+Jamaah lihat sendiri — setiap donasi tercatat publik, bisa diaudit siapa saja, kapan saja.
+
+---
+
+## SEGMENT 5: ZAKAT (1:48-2:12)
+File output: seg5-zakat.mp3
+
+Ramadhan, banyak jamaah tanya soal zakat fitrah. Input jumlah anggota keluarga, keluar nominalnya — sesuai harga beras setempat. Bisa langsung bayar lewat kampanye yang sama.
+
+---
+
+## SEGMENT 6: DASHBOARD (2:12-2:37)
+File output: seg6-dashboard.mp3
+
+Dashboard pengurus masjid — semua kampanye dalam satu tempat. Setiap transaksi tercatat, tidak ada yang hilang, tidak ada yang perlu direkap manual.
+
+Mau laporan? Satu klik.
+
+---
+
+## SEGMENT 7: CLOSING (2:37-3:00)
+File output: seg7-closing.mp3
+
+Dari pencatatan manual yang melelahkan — ke transparansi publik yang memuliakan amanah jamaah.
+
+[pause] [pause]
+
+Sadaqo.
+
+[pause] [pause] [pause]
+
+Delapan ratus ribu masjid Indonesia belum punya ini.
+
+---
+
+## CARA PAKAI DI WEB UI (Model v3):
+
+1. Buka https://elevenlabs.io/speech-synthesis
+2. Pilih **Model: Eleven v3** (alpha - paling ekspresif)
+3. Pilih voice: U3dExJoUNcmTY5H6GMuG (atau voice library lain)
+4. Settings:
+   - Stability: 0.60-0.70 (v3 lebih ekspresif dengan stability lebih rendah)
+   - Clarity + Similarity: 0.80
+   - Style: 0.3-0.5 (untuk natural conversational tone)
+   - Speed: 0.92x
+5. Copy-paste narasi per segmen (tanpa header)
+6. Generate → Download MP3
+7. Rename → seg1-hook.mp3, dst
+8. Taruh di: I:/Github/hackathon/amanahflow/video/public/audio/
+
+## PERBEDAAN FORMAT V3:
+
+✅ **Kalimat lebih mengalir** — tidak terlalu banyak paragraph breaks
+✅ **Punctuation natural** — koma, em-dash, titik untuk rhythm
+✅ **[pause] markers** — untuk pause eksplisit (v3 support ini)
+✅ **Lebih conversational** — seperti orang bicara, bukan membaca
+✅ **Emotional cues** — em-dash untuk emphasis, koma untuk breathing
+
+## TIPS V3:
+
+- **Stability lebih rendah** (0.60-0.70) = lebih ekspresif, natural
+- **Style 0.3-0.5** = conversational tone (bukan monotone)
+- **[pause] markers** = pause eksplisit, bisa multiple `[pause] [pause]` untuk pause lebih panjang
+- **Punctuation matters** = koma, em-dash, titik akan affect delivery
+- **Regenerate jika perlu** = v3 alpha bisa inconsistent, coba 2-3x jika hasil kurang pas
+
+## ALTERNATIVE: Jika Hasil Terlalu Ekspresif
+
+Jika v3 terlalu "dramatic" atau inconsistent, fallback ke **Eleven Multilingual v2**:
+- Lebih stable, predictable
+- Pakai format dari `audio-scripts-webui.txt` (dengan paragraph breaks)
+- Settings: stability 0.70, style 0.0

@@ -1,0 +1,206 @@
+# Audio Scripts for ElevenLabs — Sadaqo Demo Video
+# Format optimized for eleven_multilingual_v2 model (Bahasa Indonesia)
+#
+# PAUSE GUIDE:
+# - Blank line = ~0.3-0.5s natural pause
+# - Single dash - = short pause
+# - Em-dash — = medium pause
+# - Double dash -- -- = longer pause (~1s)
+# - Triple blank lines = ~1.5s pause
+#
+# Voice ID: U3dExJoUNcmTY5H6GMuG
+# Settings: stability=0.70, similarity=0.80, style=0.0, speed=0.92
+
+---
+
+[SEGMENT 1: HOOK]
+Duration: 0:00-0:22
+Output: seg1-hook.mp3
+I:\Github\hackathon\amanahflow\secrets\skrip-video.md
+Hari ini, ada pengurus masjid yang masih ngetik manual ke spreadsheet.
+
+
+-- --
+
+
+Sambil balas konfirmasi transfer satu per satu di WhatsApp.
+
+
+-- --
+
+
+Di bulan Ramadhan.
+
+
+
+
+Hampir semuanya begitu.
+
+---
+
+[SEGMENT 2: INTRO]
+Duration: 0:22-0:40
+Output: seg2-intro.mp3
+
+Sadaqo.
+
+Platform donasi yang dibuat khusus untuk DKM Indonesia.
+
+
+Bukan diadaptasi dari crowdfunding umum.
+
+Bukan aplikasi lembaga zakat besar yang butuh proses berbulan-bulan.
+
+
+Dibuat karena frustrasi itu nyata — dan pengurus masjid layak dapat alat yang lebih baik.
+
+---
+
+[SEGMENT 3: KAMPANYE]
+Duration: 0:40-1:15
+Output: seg3-kampanye.mp3
+
+Dari daftar sampai kampanye siap dibagikan — lima menit.
+
+
+Isi nama, target, deskripsi.
+
+Klik satu tombol.
+
+
+Halaman kampanye langsung live.
+
+
+Jamaah bisa lihat progress kapan saja — tanpa login, tanpa tanya ke siapapun.
+
+
+Satu klik.
+
+Pesan WhatsApp sudah terbentuk — lengkap dengan link dan angka terkini.
+
+---
+
+[SEGMENT 4: DONASI + MAYAR]
+Duration: 1:15-1:48
+Output: seg4-donasi.mp3
+
+Dari sisi jamaah yang mau berdonasi.
+
+
+Klik donasi.
+
+Langsung ke Mayar — bisa transfer bank, QRIS, semua tersedia.
+
+
+-- --
+
+
+Pembayaran masuk.
+
+Tercatat otomatis.
+
+
+DKM nggak perlu cek WhatsApp.
+
+Nggak perlu rekap manual.
+
+
+Jamaah lihat sendiri.
+
+Setiap donasi tercatat publik — bisa diaudit siapa saja, kapan saja.
+
+---
+
+[SEGMENT 5: ZAKAT]
+Duration: 1:48-2:12
+Output: seg5-zakat.mp3
+
+Ramadhan, banyak jamaah tanya soal zakat fitrah.
+
+
+Input jumlah anggota keluarga.
+
+Keluar nominalnya — sesuai harga beras setempat.
+
+
+Bisa langsung bayar lewat kampanye yang sama.
+
+---
+
+[SEGMENT 6: DASHBOARD]
+Duration: 2:12-2:37
+Output: seg6-dashboard.mp3
+
+Dashboard pengurus masjid.
+
+Semua kampanye dalam satu tempat.
+
+
+Setiap transaksi tercatat.
+
+Tidak ada yang hilang, tidak ada yang perlu direkap manual.
+
+
+Mau laporan?
+
+Satu klik.
+
+---
+
+[SEGMENT 7: CLOSING]
+Duration: 2:37-3:00
+Output: seg7-closing.mp3
+
+Dari pencatatan manual yang melelahkan — ke transparansi publik yang memuliakan amanah jamaah.
+
+
+
+
+Sadaqo.
+
+
+
+
+-- -- -- --
+
+
+
+
+Delapan ratus ribu masjid Indonesia belum punya ini.
+
+---
+
+# PRODUCTION NOTES
+
+## Pause Timing Verification
+After generating, verify pause durations:
+- Seg 1: Check 1.5s pause after "spreadsheet" and "WhatsApp"
+- Seg 2: Check natural flow between sentences
+- Seg 7: Check 2s pause before final line
+
+## Pronunciation Check
+- "Sadaqo" → sa-DA-qo (emphasis on middle syllable)
+- "DKM" → pronounce as letters: De-Ka-Em
+- "QRIS" → pronounce as letters: Ku-Ris or Kyu-Ris
+- "800.000" → "delapan ratus ribu" (written out in seg7)
+
+## Alternative Formats (if needed)
+
+### For flash_v2_5 or turbo_v2_5 models (SSML support):
+Replace pause markers with:
+- `-- --` → `<break time="1.0s" />`
+- Triple blank lines → `<break time="1.5s" />`
+- `-- -- -- --` → `<break time="2.0s" />`
+
+### For v3 model (alpha):
+Use `[pause]` markers:
+- `-- --` → `[pause]`
+- Triple blank lines → `[pause] [pause]`
+
+## Quality Check Workflow
+1. Generate all 7 segments
+2. Listen to each in sequence
+3. Check total duration matches target (3:00)
+4. Verify pause timing feels natural
+5. Re-generate any segments with issues
+6. Adjust pause markers if needed
