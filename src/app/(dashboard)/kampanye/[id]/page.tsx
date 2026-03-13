@@ -16,10 +16,12 @@ import {
   Users,
   TrendingUp,
   Clock,
+  Pencil,
 } from 'lucide-react';
 import Link from 'next/link';
 import { ShareButton } from '@/components/donation/share-button';
 import { CampaignCreatedBanner } from '@/components/campaign/campaign-created-banner';
+import { DeleteCampaignButton } from '@/components/campaign/delete-campaign-button';
 import { format } from 'date-fns';
 import { id as idLocale } from 'date-fns/locale/id';
 
@@ -90,6 +92,12 @@ export default async function CampaignDetailPage({
         </div>
         <div className="flex gap-2 shrink-0">
           <Button asChild variant="outline" size="sm">
+            <Link href={`/kampanye/${campaign.id}/edit`}>
+              <Pencil className="w-4 h-4 mr-1" />
+              Edit
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="sm">
             <Link href={`/campaign/${campaign.slug}`} target="_blank">
               <ExternalLink className="w-4 h-4 mr-1" />
               Lihat
@@ -101,6 +109,7 @@ export default async function CampaignDetailPage({
             collected={campaign.collected_amount || 0}
             target={campaign.target_amount}
           />
+          <DeleteCampaignButton campaignId={campaign.id} />
         </div>
       </div>
 
