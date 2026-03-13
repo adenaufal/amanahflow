@@ -1,13 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Moon, Calculator, LogIn, Menu, X } from 'lucide-react';
+import { Moon, Calculator, LogIn, Menu, X, LayoutDashboard } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { createClient } from '@/lib/supabase/client';
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getSession().then(({ data }) => {
+      setIsLoggedIn(!!data.session);
+    });
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+      setIsLoggedIn(!!session);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
@@ -30,15 +43,26 @@ export function Navbar() {
         </nav>
 
         <div className="hidden sm:flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/login">
-              <LogIn className="w-4 h-4 mr-1.5" />
-              Masuk
-            </Link>
-          </Button>
-          <Button asChild size="sm" className="gradient-emerald text-white">
-            <Link href="/register">Daftar</Link>
-          </Button>
+          {isLoggedIn ? (
+            <Button asChild size="sm" className="gradient-emerald text-white">
+              <Link href="/dashboard">
+                <LayoutDashboard className="w-4 h-4 mr-1.5" />
+                Dashboard
+              </Link>
+            </Button>
+          ) : (
+            <>
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/login">
+                  <LogIn className="w-4 h-4 mr-1.5" />
+                  Masuk
+                </Link>
+              </Button>
+              <Button asChild size="sm" className="gradient-emerald text-white">
+                <Link href="/register">Daftar</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile menu button */}
@@ -68,17 +92,28 @@ export function Navbar() {
             Kalkulator Zakat
           </Link>
           <div className="flex gap-2 pt-1">
-            <Button asChild variant="outline" size="sm" className="flex-1">
-              <Link href="/login" onClick={() => setMobileOpen(false)}>
-                <LogIn className="w-4 h-4 mr-1.5" />
-                Masuk
-              </Link>
-            </Button>
-            <Button asChild size="sm" className="flex-1 gradient-emerald text-white">
-              <Link href="/register" onClick={() => setMobileOpen(false)}>
-                Daftar
-              </Link>
-            </Button>
+            {isLoggedIn ? (
+              <Button asChild size="sm" className="flex-1 gradient-emerald text-white">
+                <Link href="/dashboard" onClick={() => setMobileOpen(false)}>
+                  <LayoutDashboard className="w-4 h-4 mr-1.5" />
+                  Dashboard
+                </Link>
+              </Button>
+            ) : (
+              <>
+                <Button asChild variant="outline" size="sm" className="flex-1">
+                  <Link href="/login" onClick={() => setMobileOpen(false)}>
+                    <LogIn className="w-4 h-4 mr-1.5" />
+                    Masuk
+                  </Link>
+                </Button>
+                <Button asChild size="sm" className="flex-1 gradient-emerald text-white">
+                  <Link href="/register" onClick={() => setMobileOpen(false)}>
+                    Daftar
+                  </Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
