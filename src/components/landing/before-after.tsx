@@ -144,7 +144,7 @@ export function BeforeAfter() {
           className="mt-10 xl:mt-14 rounded-2xl overflow-hidden border border-border/40 shadow-md"
         >
           <Image
-            src="/char-community.png"
+            src="/char-community.webp"
             alt="Komunitas jamaah masjid bersama"
             width={1200}
             height={500}

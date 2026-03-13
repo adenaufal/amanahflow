@@ -10,13 +10,13 @@ const testimonials = [
     quote: 'Dulu tiap Ramadhan saya harus update spreadsheet manual dan jawab pertanyaan jamaah satu-satu. Sekarang cukup kirim satu link — mereka lihat sendiri.',
     name: 'Ustaz Fajar',
     role: 'Ketua DKM Masjid Al-Ikhlas, Bekasi',
-    image: '/char-man-tablet.png',
+    image: '/avatar-fajar.webp',
   },
   {
     quote: 'Sangat membantu untuk kampanye zakat fitrah. Jamaah percaya karena semua transaksi bisa dicek langsung. Laporan jadi transparan tanpa kerja ekstra.',
     name: 'Ibu Rahma',
     role: 'Bendahara Mushola Al-Falah, Tangerang',
-    image: '/char-woman-phone.png',
+    image: '/avatar-rahma.webp',
   },
 ];
 
@@ -59,9 +59,9 @@ export function SocialProof() {
                 <Image
                   src={t.image}
                   alt={t.name}
-                  width={52}
-                  height={52}
-                  className="w-[52px] h-[52px] xl:w-[60px] xl:h-[60px] rounded-xl object-cover object-top shrink-0"
+                  width={60}
+                  height={60}
+                  className="w-[52px] h-[52px] xl:w-[60px] xl:h-[60px] rounded-xl object-cover shrink-0"
                 />
                 <div>
                   <p className="font-semibold text-sm xl:text-base leading-none mb-1">{t.name}</p>
